@@ -14,10 +14,13 @@ import java.sql.SQLException;
  */
 public abstract class AbstractRepository {
 
+    //добавить схему
+    //прописать настройки в файл
     private static Logger logger = LoggerFactory.getLogger(RegController.class);
 
     static Connection connection;
 
+    //pool соединение
     public static void getConnection() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         Class.forName("org.postgresql.Driver").newInstance();
         connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/products", "postgres", "postgres");

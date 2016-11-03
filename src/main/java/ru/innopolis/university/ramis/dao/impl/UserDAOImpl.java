@@ -27,6 +27,7 @@ public class UserDAOImpl extends AbstractRepository implements UserDAO {
     public void add(User user) throws SQLException {
         String sql = "INSERT INTO \"user\"(email, password, login) VALUES (?,?,?)";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        //сделать файл констант
         preparedStatement.setString(1, user.getEmail());
         preparedStatement.setString(2, user.getPassword());
         preparedStatement.setString(3, user.getLogin());
